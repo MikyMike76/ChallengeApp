@@ -1,43 +1,20 @@
-﻿string name;
-string answerSex;
-bool sex = true;
-int age;
-Console.Write("Wpisz swoje imię: ");
-name = Console.ReadLine();
-name = name.ToLower();
-Console.WriteLine();
-Console.Write("Czy jesteś mężczyzną? Wpisz tak/nie: ");
-answerSex =  Console.ReadLine();
-answerSex = answerSex.ToLower();
-if (answerSex == "tak")
+﻿int number = 4566;
+string numberToString = number.ToString();
+char[] digits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+int[] repeats = new int[10];
+foreach (char c in numberToString)
 {
-    sex = true;
+    for (int i = 0; i < digits.Length; i++)
+    {
+        if(c == digits[i])
+        {
+            repeats[i]++;
+        }
+    }
 }
-else if (answerSex == "nie")
-{
-    sex = false;
-}
-else
-{
-    Console.WriteLine("Wpisałeś złą odpowiedź na 2. pytanie! Zacznij program od nowa i odpowiadaj tylko tak/nie!");
-}
-Console.WriteLine();
-Console.Write("Wpisz swój wiek: ");
-age = Convert.ToInt32(Console.ReadLine());
 
-if (age < 30 && sex == false)
+for (int i = 0; i < digits.Length; i ++)
 {
-    Console.WriteLine("Kobieta poniżej 30-ki");
+    Console.WriteLine("Cyfra {0} wystąpiła {1} razy", digits[i], repeats[i]);
 }
-else if (name == "ewa" && age == 30)
-{
-    Console.WriteLine("Ewa, lat 30");
-}
-else if (sex == true && age < 18)
-{
-    Console.WriteLine("Niepełnoletni mężczyzna!");
-}
-else
-{
-    Console.WriteLine();
-}
+
