@@ -1,7 +1,7 @@
 ﻿using ChallengeApp;
 
 Employee employee1 = new Employee("Miky", "Mike");
-employee1.AddGrade(5.5f);
+employee1.AddGrade("5,5");
 employee1.AddGrade(6.3f);
 employee1.AddGrade(7);
 var statistics = employee1.GetStatistics();
