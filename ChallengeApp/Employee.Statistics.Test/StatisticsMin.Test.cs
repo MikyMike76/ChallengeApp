@@ -1,12 +1,12 @@
 using ChallengeApp;
 
-namespace Statistics.Test
+namespace StatisticsMin.Test
 {
     public class MinTests
     {
    
         [Test]
-        public void WhenStatistics_ShouldAverageMaxMinCorrect()
+        public void WhenStatistics_ShouldMinCorrect()
         {
             //arrange
             var worker = new Employee("Mike", "Gol");
