@@ -5,45 +5,29 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace ChallengeApp
 {
-    public class Employee /*: Person*/
-    {  
+    public class Employee
+    {
         private List<float> grades = new List<float>();
-
-        //public Employee(string name, string surname)
-        //    : base(name, surname)
-        //{
-
-        //}
-        //public Employee(string name, string surname, char sex) 
-        //    :base (name, surname, sex)
-        //{
-
-        //}
-
         public string Name { get; private set; }
         public string Surname { get; private set; }
-
         public Employee(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;
         }
-
-        public void AddGrade (float grade)
+        public void AddGrade(float grade)
         {
-            if (grade >= 0 && grade <=100)
-            { 
-                this.grades.Add(grade); 
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
             }
             else
             {
                 throw new Exception("Invalid grade value");
             }
         }
-
         public void AddGrade(string grade)
         {
-            
             if (float.TryParse(grade, out float resultFloat))
             {
                 this.AddGrade(resultFloat);
@@ -80,32 +64,25 @@ namespace ChallengeApp
             {
                 throw new Exception("Incorrect valuable: only number or ABCDE-grade");
             }
-
         }
-
         public Statistics GetStatistics()
         {
             var statistics = new Statistics();
-
             statistics.Average = 0;
             statistics.Max = float.MinValue;
             statistics.Min = float.MaxValue;
-
             foreach (var grade in this.grades)
             {
                 statistics.Average += grade;
                 statistics.Max = Math.Max(statistics.Max, grade);
                 statistics.Min = Math.Min(statistics.Min, grade);
             }
-
-
             statistics.Average /= this.grades.Count;
-
-            switch(statistics.Average)
+            switch (statistics.Average)
             {
                 case var A when statistics.Average == 100:
                     statistics.AverageLetter = 'A';
-                        break;
+                    break;
                 case var B when statistics.Average > 80:
                     statistics.AverageLetter = 'B';
                     break;
@@ -118,18 +95,11 @@ namespace ChallengeApp
                 case var E when statistics.Average > 20:
                     statistics.AverageLetter = 'E';
                     break;
-                    default:
+                default:
                     statistics.AverageLetter = 'F';
                     break;
             }
-
-
             return statistics;
         }
-
-
-        
-
-
     }
 }

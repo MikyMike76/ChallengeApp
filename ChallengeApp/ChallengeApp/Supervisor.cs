@@ -14,7 +14,6 @@ namespace ChallengeApp
             this.Name = name;
             this.Surname = surname;
         }
-
         public void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100)
@@ -26,7 +25,6 @@ namespace ChallengeApp
                 throw new Exception("Invalid grade value");
             }
         }
-
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float floatResult))
@@ -142,7 +140,6 @@ namespace ChallengeApp
                 }
             }
         }
-
         public Statistics GetStatistics()
         {
             var statistics = new Statistics();
@@ -157,7 +154,6 @@ namespace ChallengeApp
                 statistics.Max = Math.Max(statistics.Max, grade);
                 statistics.Min = Math.Min(statistics.Min, grade);
             }
-
 
             statistics.Average /= this.grades.Count;
 
@@ -182,8 +178,6 @@ namespace ChallengeApp
                     statistics.AverageLetter = 'F';
                     break;
             }
-
-
             return statistics;
         }
     }
