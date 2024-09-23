@@ -1,6 +1,6 @@
 ﻿using ChallengeApp;
 
-Employee employee1 = new Employee("Miky", "Mike");
+EmployeeInFile employee1 = new EmployeeInFile("Miky", "Mike");
 
 Console.WriteLine("Witamy w Programie do oceny pracowników!");
 Console.WriteLine();
@@ -18,7 +18,8 @@ Console.WriteLine();
 
 while(true)
 {
-    Console.Write("Podaj kolejną ocenę pracownika. Aby zakończyć wpisywanie ocen, naciśnij Spacja + Enter: ");
+    Console.Write("Podaj kolejną ocenę pracownika. Użyj dowolnej liczby 0-100 albo litery A-E.");
+    Console.Write("Aby zatwierdzić, naciśnij Enter. Aby zakończyć wpisywanie ocen, naciśnij Spacja + Enter: ");
     input = Console.ReadLine();
 
     if (input == " ")
