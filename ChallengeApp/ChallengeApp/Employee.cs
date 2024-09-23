@@ -25,7 +25,7 @@ namespace ChallengeApp
             }
             else
             {
-                Console.WriteLine("Invalid grade value");
+                throw new Exception("Invalid grade value");
             }
         }
 
@@ -61,13 +61,12 @@ namespace ChallengeApp
                         this.AddGrade(20f);
                         break;
                     default:
-                        Console.WriteLine("Incorrect grade name");
-                        break;
+                        throw new Exception("Incorrect grade name");
                 }
             }
             else
             {
-                Console.WriteLine("Incorrect number name");
+                throw new Exception("Incorrect valuable: only number or ABCDE-grade");
             }
 
         }
