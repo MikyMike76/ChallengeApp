@@ -9,7 +9,7 @@ namespace Input.Test
         public void WhenABCDstringInput_ShouldCorrectGradeAdd()
         {
             //arrange
-            var worker = new Employee("Mike", "Gol");
+            var worker = new EmployeeInMemory("Mike", "Gol");
             worker.AddGrade("A");
             worker.AddGrade("B");
             worker.AddGrade("C");
@@ -29,7 +29,7 @@ namespace Input.Test
         public void When_abcd_StringInput_ShouldCorrectGradeAdd()
         {
             //arrange
-            var worker = new Employee("Mike", "Gol");
+            var worker = new EmployeeInMemory("Mike", "Gol");
             worker.AddGrade("a");
             worker.AddGrade("b");
             worker.AddGrade("c");
@@ -49,7 +49,7 @@ namespace Input.Test
         public void WhenMoreThenOneLetterStringInput_ShouldCorrectGradeAdd()
         {
             //arrange
-            var worker = new Employee("Mike", "Gol");
+            var worker = new EmployeeInMemory("Mike", "Gol");
             worker.AddGrade("rt");
             worker.AddGrade("b");
             worker.AddGrade("c");
@@ -69,7 +69,7 @@ namespace Input.Test
         public void WhenOutOfRangeABCDStringInput_ShouldCorrectGradeAdd()
         {
             //arrange
-            var worker = new Employee("Mike", "Gol");
+            var worker = new EmployeeInMemory("Mike", "Gol");
             worker.AddGrade("L");
             worker.AddGrade("b");
             worker.AddGrade("c");

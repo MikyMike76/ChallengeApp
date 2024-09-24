@@ -9,7 +9,7 @@ namespace StatisticsAverage.Test
         public void WhenStatistics_ShouldAverageCorrect()
         {
             //arrange
-            var worker = new Employee("Mike", "Gol");
+            var worker = new EmployeeInMemory("Mike", "Gol");
             worker.AddGrade(5.5f);
             worker.AddGrade(3.5f);
             worker.AddGrade(2.5f);

@@ -1,11 +1,16 @@
 ﻿using ChallengeApp;
 
-EmployeeInFile employee1 = new EmployeeInFile("Miky", "Mike");
-
 Console.WriteLine("Witamy w Programie do oceny pracowników!");
 Console.WriteLine();
+
+EmployeeInMemory employee = new EmployeeInMemory("Adam", "Adam");
+employee.AddGrade(50);
+
+EmployeeInFile employee1 = new EmployeeInFile("Miky", "Mike");
+
 Console.Write("Podaj pierwszą ocenę pracownika. Użyj dowolnej liczby 0-100 albo litery A-E. Aby zatwierdzić, naciśnij Enter: ");
 var input = Console.ReadLine();
+
 try
 {
     employee1.AddGrade(input);

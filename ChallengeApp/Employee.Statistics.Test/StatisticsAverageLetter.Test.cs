@@ -9,7 +9,7 @@ namespace StatisticsAverageLetter.Test
         public void WhenStatistics_ShouldAverageLetterCorrect()
         {
             //arrange
-            var worker = new Employee("Mike", "Gol");
+            var worker = new EmployeeInMemory("Mike", "Gol");
             worker.AddGrade(55.5f);
             worker.AddGrade('a');
             worker.AddGrade('B');
