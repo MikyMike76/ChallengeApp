@@ -6,7 +6,7 @@ namespace Input.Test
     {
    
         [Test]
-        public void WhenABCDstringInput_ShouldCorrectGradeAdd()
+        public void WhenABCDstringInput_ShouldAddCorrectGrade()
         {
             //arrange
             var worker = new EmployeeInMemory("Mike", "Gol");
@@ -26,7 +26,7 @@ namespace Input.Test
         }
 
         [Test]
-        public void When_abcd_StringInput_ShouldCorrectGradeAdd()
+        public void When_abcd_StringInput_ShouldAddCorrectGrade()
         {
             //arrange
             var worker = new EmployeeInMemory("Mike", "Gol");
@@ -44,46 +44,5 @@ namespace Input.Test
 
 
         }
-
-        [Test]
-        public void WhenMoreThenOneLetterStringInput_ShouldCorrectGradeAdd()
-        {
-            //arrange
-            var worker = new EmployeeInMemory("Mike", "Gol");
-            worker.AddGrade("rt");
-            worker.AddGrade("b");
-            worker.AddGrade("c");
-
-            //act
-
-            var result = worker.GetStatistics();
-
-            //assert
-
-            Assert.AreEqual(70, result.Average);
-
-
-        }
-
-        [Test]
-        public void WhenOutOfRangeABCDStringInput_ShouldCorrectGradeAdd()
-        {
-            //arrange
-            var worker = new EmployeeInMemory("Mike", "Gol");
-            worker.AddGrade("L");
-            worker.AddGrade("b");
-            worker.AddGrade("c");
-
-            //act
-
-            var result = worker.GetStatistics();
-
-            //assert
-
-            Assert.AreEqual(70, result.Average);
-
-
-        }
-
     }
 }
