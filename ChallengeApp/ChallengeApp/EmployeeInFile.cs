@@ -5,7 +5,7 @@
         public override event GradeAddedDelegate GradeAdded;
         private List<float> grades = new List<float>();
 
-        public EmployeeInFile(string name, string surname) 
+        public EmployeeInFile(string name, string surname)
             : base(name, surname)
         {
         }
@@ -75,9 +75,6 @@
         public override Statistics GetStatistics()
         {
             var statistics = new Statistics();
-            statistics.Average = 0;
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
             if (File.Exists($"{fileName}"))
             {
                 using (var reader = File.OpenText($"{fileName}"))
@@ -92,31 +89,7 @@
                 }
                 foreach (var grade in this.grades)
                 {
-                    statistics.Average += grade;
-                    statistics.Max = Math.Max(statistics.Max, grade);
-                    statistics.Min = Math.Min(statistics.Min, grade);
-                }
-                statistics.Average /= this.grades.Count;
-                switch (statistics.Average)
-                {
-                    case var A when statistics.Average == 100:
-                        statistics.AverageLetter = 'A';
-                        break;
-                    case var B when statistics.Average > 80:
-                        statistics.AverageLetter = 'B';
-                        break;
-                    case var C when statistics.Average > 60:
-                        statistics.AverageLetter = 'C';
-                        break;
-                    case var D when statistics.Average > 40:
-                        statistics.AverageLetter = 'D';
-                        break;
-                    case var E when statistics.Average > 20:
-                        statistics.AverageLetter = 'E';
-                        break;
-                    default:
-                        statistics.AverageLetter = 'F';
-                        break;
+                    statistics.AddGrade(grade);
                 }
             }
             return statistics;
